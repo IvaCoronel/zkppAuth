@@ -57,7 +57,7 @@ management:
   security.enabled: false
   
 kafka:
-  enabled: true
+  enabled: false
   zookeeper:
     url: "10.8.120.53:2181"
   broker:
