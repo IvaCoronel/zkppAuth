@@ -1,0 +1,103 @@
+body, article, h1, h2, ul, li { margin:0; padding:0; }
+ul, li { list-style-type:none; }
+body { font-family:sans-serif; padding:0; margin:0; background-color:#FFF; }
+h1, article h2 { cursor:pointer; }
+
+h1 { font-size:1.4em; padding:.45em; text-align:center; color:#FFF; text-shadow:2px 2px 2px rgba(0,0,0,.5);
+	background:#f4e842;
+	background:-moz-linear-gradient(top,  #f4e842 2%, #607D27 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(2%,#f4e842), color-stop(100%,#607D27));
+	background:-webkit-linear-gradient(top,  #f4e842 2%,#607D27 100%);
+	background:-o-linear-gradient(top,  #f4e842 2%,#607D27 100%);
+	background:-ms-linear-gradient(top,  #f4e842 2%,#607D27 100%);
+	background:linear-gradient(top,  #f4e842 2%,#607D27 100%);
+}
+
+article { border-bottom:1px solid #CCC; border-top:1px solid #FFF; font-size:1em; }
+	article h2 { padding:.8em .7em; font-size:1.1em; background-color:#EAEDF4; transition:background-color .4s; -moz-transition:background-color .4s; -webkit-transition:background-color .4s; -o-transition:background-color .4s; }
+		article h2 img { display:block; float:right; margin-left:.8em; cursor:pointer; }
+		article.sel h2 { background-color:#E01B6A; color:#FFF; text-shadow:2px 2px 2px rgba(0,0,0,.5); }
+	article p { max-height:0; overflow:hidden; padding:0 .1em 0 .7em; margin:0; transition:all .5s; -moz-transition:all .5s; -webkit-transition:all .5s; -o-transition:all .5s;}
+		article.sel p { max-height:15em; padding:.7em .1em .7em .7em; }
+	article p .actions { float: right; width:30px; margin-left:.6em;}
+		article p .actions img { display:block; width:20px; height:20px; cursor:pointer; margin:.6em 0; }
+	article p .time { display:block; font-size:.8em; color:#968F92; margin-top: .6em; }
+	article p .map { display: block; font-size:.8em; color:#1B7AE0; font-style:italic; margin-top:.4em; text-decoration:none;}
+		article p .map:hover { text-decoration:underline; }
+
+#status { display: block; cursor:pointer; position:absolute; top: .40em; left:0.5em; background-color: transparent;}	
+#refresh { display: block; cursor:pointer; position:absolute; top: .40em; right:3.5em; background-color: transparent;}   
+#newEntry { display: block; cursor:pointer; position:absolute; top: .40em; right:0.5em }
+#remove { display: block; cursor:pointer; position:absolute; top: .40em; right:6.5em }
+#register { display: block; cursor:pointer; position:absolute; top: .40em; right:9.5em }
+
+#storeEntry { display:none; width:96%; padding: 2%; }
+#storeEntry label { display: block; width:100%; margin:.7em 0 .1em 0; font-weight:bold; }
+#storeEntry input[type=text], #storeEntry textarea { width:100%; border:1px solid #CCC; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#storeEntry .error { border: 1px solid #C00!important; }
+#storeEntry #btnCancel, #storeEntry #btnSubmit { font-size:1.1em; }
+
+#noEntries { text-align:center; font-size:1.2em; }
+
+#location { font-size:.8em; margin-top: 1em; color: #968F92; font-style:italic; }
+#location a { color: #968F92; }
+
+form {
+  /* Just to center the form on the page */
+  margin: 0 auto;
+  width: 300px;
+  align: center;
+  /* To see the outline of the form */
+  padding: 24px 24px 24px 24px;
+  border-radius: 1em;
+  font-family: 'Roboto', sans-serif;
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+label {
+  /* To make sure that all labels have the same size and are properly aligned */
+  display: inline-block;
+  width: 90px;
+  text-align: center;
+}
+
+input, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* To harmonize the look & feel of text field border */
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+  /* To give a little highlight on active elements */
+  border-color: #000;
+}
+
+textarea {
+  /* To properly align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* To give enough room to type some text */
+  height: 5em;
+}
+
+.button {
+  /* To position the buttons to the same position of the text fields */
+  padding-left: 90px; /* same size as the label elements */
+  padding-top: 90px;
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: .5em;
+}
