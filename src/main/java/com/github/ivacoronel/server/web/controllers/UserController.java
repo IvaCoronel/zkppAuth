@@ -26,8 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Loggable(ignore = Exception.class)
 @Api(tags = "Users")
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping(path = "/users")
+@RequestMapping("/zkauth/users")
 public class UserController {
 
     private final UserService userService;

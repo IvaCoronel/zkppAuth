@@ -29,9 +29,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Loggable(ignore = Exception.class)
 @Api(tags = "Diaries")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping(path = "/diary")
+@RequestMapping(path = "/zkauth/diary")
 public class DiaryController {
 
     private final DiaryService diaryService;

@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -25,6 +26,7 @@ public class DiaryServiceImpl implements DiaryService {
     private final DiaryRepository repository;
     
     @Autowired
+    @Lazy
     private UserService userService;
    
     @Autowired
