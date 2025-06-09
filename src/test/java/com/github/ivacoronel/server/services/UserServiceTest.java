@@ -10,13 +10,12 @@ import com.github.rozidan.springboot.modelmapper.WithModelMapper;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -34,7 +33,8 @@ import java.util.Optional;
 
 @RunWith(SpringRunner.class)
 @WithModelMapper(basePackageClasses = MappingBasePackage.class)
-@ContextConfiguration(classes = UserServiceImpl.class, initializers = ConfigFileApplicationContextInitializer.class)
+@ContextConfiguration(classes = UserServiceImpl.class)
+@SpringBootTest
 
 public class UserServiceTest {
 
@@ -65,7 +65,7 @@ public class UserServiceTest {
     @Value("${test.answer}")
     private String answer;
     
-    @Value("{test.username}")
+    @Value("${test.username}")
     private String username;
 
     @Test
@@ -143,7 +143,7 @@ public class UserServiceTest {
         		assertTrue(toBeDeleted.equals(result.getName()));
         		return null;
         	}
-        }).when(repository).deleteByName(Matchers.any(String.class));
+        }).when(repository).deleteByName(any(String.class));
         service.removeByName(result.getName(),answer);
     }
     
@@ -310,7 +310,7 @@ public class UserServiceTest {
         		assertTrue(toBeUpdated.getSstatus().equals(SessionStatus.INITIATING));
         		return null;
         	}
-        }).when(repository).save(Matchers.any(User.class));
+        }).when(repository).save(any(User.class));
         service.generateServerSecret(input);
     }
 }

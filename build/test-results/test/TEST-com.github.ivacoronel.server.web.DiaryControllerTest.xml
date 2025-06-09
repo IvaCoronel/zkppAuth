@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.github.ivacoronel.server.web.DiaryControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-06-09T02:08:15" hostname="gercos" time="0.316">
+  <properties/>
+  <testcase name="registerValidationFailedUniqueName" classname="com.github.ivacoronel.server.web.DiaryControllerTest" time="0.263"/>
+  <testcase name="removeSuccess" classname="com.github.ivacoronel.server.web.DiaryControllerTest" time="0.014"/>
+  <testcase name="fetchSuccess" classname="com.github.ivacoronel.server.web.DiaryControllerTest" time="0.018"/>
+  <testcase name="addSuccess" classname="com.github.ivacoronel.server.web.DiaryControllerTest" time="0.016"/>
+  <system-out><![CDATA[2025-06-08 23:08:14.153  INFO 212079 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.github.ivacoronel.server.web.DiaryControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-06-08 23:08:14.172  INFO 212079 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.github.ivacoronel.server.ZKAuthApplication for test class com.github.ivacoronel.server.web.DiaryControllerTest
+2025-06-08 23:08:14.173  INFO 212079 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2025-06-08 23:08:14.174  INFO 212079 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4c93ba3e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@658ed88c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@28b37d90, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@72244234, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@23374404, org.springframework.test.context.support.DirtiesContextTestExecutionListener@306eb256, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3021636, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5367c180, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@4ae9b88c, org.springframework.test.context.event.EventPublishingTestExecutionListener@f505f85, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@1cf05bff, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@71f6e220, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@765c094a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7bfddc73, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@65cc5f50, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@236d562b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@35ed1d55]
+2025-06-08 23:08:14.178  INFO 212079 --- [    Test worker] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  _________            .__              ______________  __.  _____          __  .__     
+ /   _____/____________|__| ____    ____\____    /    |/ _| /  _  \  __ ___/  |_|  |__  
+ \_____  \\____ \_  __ \  |/    \  / ___\ /     /|      <  /  /_\  \|  |  \   __\  |  \ 
+ /        \  |_> >  | \/  |   |  \/ /_/  >     /_|    |  \/    |    \  |  /|  | |   Y  \
+/_______  /   __/|__|  |__|___|  /\___  /_______ \____|__ \____|__  /____/ |__| |___|  /
+        \/|__|                 \//_____/        \/       \/       \/                 \/ 
+::::  
+
+2025-06-08 23:08:14.261  INFO 212079 --- [    Test worker] c.g.i.server.web.DiaryControllerTest     : Starting DiaryControllerTest using Java 11.0.27 on gercos with PID 212079 (started by ivana in /home/ivana/projects/SpringZKAuth)
+2025-06-08 23:08:14.262  INFO 212079 --- [    Test worker] c.g.i.server.web.DiaryControllerTest     : No active profile set, falling back to 1 default profile: "default"
+2025-06-08 23:08:14.265  INFO 212079 --- [    Test worker] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-06-08 23:08:14.266  INFO 212079 --- [    Test worker] o.s.c.c.c.ConfigServerConfigDataLoader   : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2025-06-08 23:08:14.266  WARN 212079 --- [    Test worker] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServerConfigDataResource@6f800514 uris = array<String>['http://localhost:8888'], optional = true, profiles = list['default']]): I/O error on GET request for "http://localhost:8888/application/default": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+2025-06-08 23:08:15.460  WARN 212079 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c86d2adb-e0d2-4c04-9ddf-2a6239bfad89
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-06-08 23:08:15.704  INFO 212079 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2f092801, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c7e8e0a, org.springframework.security.web.context.SecurityContextPersistenceFilter@eed2b23, org.springframework.security.web.header.HeaderWriterFilter@11b7550b, org.springframework.security.web.csrf.CsrfFilter@20160fdd, org.springframework.security.web.authentication.logout.LogoutFilter@2ea76362, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@31194729, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4f3cd08d, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6097d6a1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@43ac1f1d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1aab4be8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d78cfad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@784cb65e, org.springframework.security.web.session.SessionManagementFilter@28085826, org.springframework.security.web.access.ExceptionTranslationFilter@3c0bfb5f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@18961ef0]
+2025-06-08 23:08:15.792  INFO 212079 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-06-08 23:08:15.792  INFO 212079 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-06-08 23:08:15.793  INFO 212079 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-06-08 23:08:15.813  INFO 212079 --- [    Test worker] c.g.i.server.web.DiaryControllerTest     : Started DiaryControllerTest in 1.634 seconds (JVM running for 11.402)
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /diary
+       Parameters = {_csrf=[7183f0c5-db70-49eb-a271-b42ed30b41a1]}
+          Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token", Content-Length:"643"]
+             Body = {
+  "createdBy" : null,
+  "lastModifiedBy" : null,
+  "id" : 1,
+  "username" : "John",
+  "entryname" : "MyDiary",
+  "content" : "a3166e7b31408c5a5c002d86b26069b69dbb91683b180c1a83533b5ea3e7c612744174a5fb9dc604e3b5c5310de40830e9cf6a61fdc71c2732cd49f18728c7961ea6e054c9c5285b8c7d4d79d3ef1fde61172dc03e69a9daf77dc77de71bc11aa05cc15f4cd007fdc72bc5bb5b4475f0d4e0c84ed059692ab4766fa1400adae5bdc3f3b9dcc0ab5af8e00924df40ed9878ed11818059005f31551323a12eece1e0ecb031ff1201093cc632ec23951420298fd4f07f560fd270eaa2ba4cf688a7f2c444a72caee47e35edd42faefabc7f596c150cc6a826eac77d94e1c0d82a28364260c678831178c8d85302f0f6d1be1ec5f99a2ac61d47a6072bb415635606"
+}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
+
+Handler:
+             Type = com.github.ivacoronel.server.web.controllers.DiaryController
+           Method = com.github.ivacoronel.server.web.controllers.DiaryController#add(DiaryDto, String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.dao.DataIntegrityViolationException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 409
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"errorCode":"DATA_VALIDATION","message":"; nested exception is org.hibernate.exception.ConstraintViolationException: ","errors":[{"fieldName":"username, entryname","errorCode":"UNIQUE","params":[]}]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /diary/John/MyDiary/
+       Parameters = {_csrf=[4f4cda20-b02f-429f-88f9-fbe25d45aea9]}
+          Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token"]
+             Body = null
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
+
+Handler:
+             Type = com.github.ivacoronel.server.web.controllers.DiaryController
+           Method = com.github.ivacoronel.server.web.controllers.DiaryController#remove(String, String, String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /diary/John/
+       Parameters = {_csrf=[dfb99051-e0d6-4945-a51a-c921a4afb74a]}
+          Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token"]
+             Body = null
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
+
+Handler:
+             Type = com.github.ivacoronel.server.web.controllers.DiaryController
+           Method = com.github.ivacoronel.server.web.controllers.DiaryController#fetch(String, String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = [{"id":1,"username":"John","entryname":"MyDiary","content":"a3166e7b31408c5a5c002d86b26069b69dbb91683b180c1a83533b5ea3e7c612744174a5fb9dc604e3b5c5310de40830e9cf6a61fdc71c2732cd49f18728c7961ea6e054c9c5285b8c7d4d79d3ef1fde61172dc03e69a9daf77dc77de71bc11aa05cc15f4cd007fdc72bc5bb5b4475f0d4e0c84ed059692ab4766fa1400adae5bdc3f3b9dcc0ab5af8e00924df40ed9878ed11818059005f31551323a12eece1e0ecb031ff1201093cc632ec23951420298fd4f07f560fd270eaa2ba4cf688a7f2c444a72caee47e35edd42faefabc7f596c150cc6a826eac77d94e1c0d82a28364260c678831178c8d85302f0f6d1be1ec5f99a2ac61d47a6072bb415635606"}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /diary
+       Parameters = {_csrf=[f82c93b8-70c3-4e08-8430-791a81334a3b]}
+          Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token", Content-Length:"643"]
+             Body = {
+  "createdBy" : null,
+  "lastModifiedBy" : null,
+  "id" : 1,
+  "username" : "John",
+  "entryname" : "MyDiary",
+  "content" : "a3166e7b31408c5a5c002d86b26069b69dbb91683b180c1a83533b5ea3e7c612744174a5fb9dc604e3b5c5310de40830e9cf6a61fdc71c2732cd49f18728c7961ea6e054c9c5285b8c7d4d79d3ef1fde61172dc03e69a9daf77dc77de71bc11aa05cc15f4cd007fdc72bc5bb5b4475f0d4e0c84ed059692ab4766fa1400adae5bdc3f3b9dcc0ab5af8e00924df40ed9878ed11818059005f31551323a12eece1e0ecb031ff1201093cc632ec23951420298fd4f07f560fd270eaa2ba4cf688a7f2c444a72caee47e35edd42faefabc7f596c150cc6a826eac77d94e1c0d82a28364260c678831178c8d85302f0f6d1be1ec5f99a2ac61d47a6072bb415635606"
+}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
+
+Handler:
+             Type = com.github.ivacoronel.server.web.controllers.DiaryController
+           Method = com.github.ivacoronel.server.web.controllers.DiaryController#add(DiaryDto, String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"id":1,"username":"John","entryname":"MyDiary","content":"a3166e7b31408c5a5c002d86b26069b69dbb91683b180c1a83533b5ea3e7c612744174a5fb9dc604e3b5c5310de40830e9cf6a61fdc71c2732cd49f18728c7961ea6e054c9c5285b8c7d4d79d3ef1fde61172dc03e69a9daf77dc77de71bc11aa05cc15f4cd007fdc72bc5bb5b4475f0d4e0c84ed059692ab4766fa1400adae5bdc3f3b9dcc0ab5af8e00924df40ed9878ed11818059005f31551323a12eece1e0ecb031ff1201093cc632ec23951420298fd4f07f560fd270eaa2ba4cf688a7f2c444a72caee47e35edd42faefabc7f596c150cc6a826eac77d94e1c0d82a28364260c678831178c8d85302f0f6d1be1ec5f99a2ac61d47a6072bb415635606"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

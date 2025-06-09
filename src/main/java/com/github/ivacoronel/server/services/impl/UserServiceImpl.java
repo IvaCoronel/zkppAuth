@@ -27,9 +27,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * @author Max Amelchenko
- */
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -140,14 +137,16 @@ public class UserServiceImpl implements UserService {
     }
     
     // perform constant time string comparison against timing attacks
-    private boolean equals(String a, String b)
-    {
-        if (a.length() != b.length()) return false;
-        boolean bool = true;
-        for (int i=0; i<a.length(); i++)
-            if (a.charAt(i) != b.charAt(i)) bool = false;
-        
-        return bool;
+    private boolean equals(String a, String b) {
+        if (a.length() != b.length()) {
+            return false;
+        }
+        for (int i = 0; i < a.length(); i++) {
+            if (a.charAt(i) != b.charAt(i)) {
+                return false;
+            }
+        }
+        return true;
     }
     
     private void throwChallengedException(User user) throws AccessDeniedException{

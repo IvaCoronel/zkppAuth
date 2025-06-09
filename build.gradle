@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.7.18")
     }
 }
 
@@ -15,9 +15,9 @@ apply plugin: 'jacoco'
 apply plugin: 'java'
 apply plugin: 'pmd'
   pmd {
-    toolVersion='5.5.2'
-    ruleSets=["java-basic","java-imports","java-strings","java-clone","java-design"]        
-}
+      toolVersion='6.55.0'
+      ruleSets=["java-basic"]
+  }
 
 apply plugin: 'idea'
     
@@ -33,42 +33,41 @@ repositories {
 }
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-devtools')
-    compile('org.springframework.cloud:spring-cloud-starter-config')
-    compile('org.springframework.boot:spring-boot-starter-actuator')
-    compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('org.springframework.boot:spring-boot-starter-security')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    implementation 'org.apache.kafka:kafka-clients:3.5.1'
+    implementation 'org.springframework:spring-context'
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'io.springfox:springfox-swagger2:2.7.0'
+    implementation 'com.101tec:zkclient:0.7'
+    implementation 'org.toile-libre.libe:curl:0.0.13'
+    implementation 'com.github.rozidan:levelog-spring-boot:1.0.0-SNAPSHOT'
+    implementation 'com.github.rozidan:modelmapper-spring-boot-starter:1.0.1-SNAPSHOT'
+    implementation 'com.github.rozidan:logger-spring-boot:1.0.0-SNAPSHOT'
+    implementation 'com.google.guava:guava:23.5-jre'
+    implementation 'org.hibernate.validator:hibernate-validator:6.1.5.Final'
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+    implementation 'org.glassfish:javax.el:3.0.0'
+    implementation 'org.springframework.kafka:spring-kafka:2.9.0'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'org.mockito:mockito-core:4.11.0'
 
-    compile ('org.springframework.boot:spring-boot-starter-jdbc')
-    compile ('org.springframework:spring-context')
-    
-    compile('com.github.rozidan:levelog-spring-boot:1.0.0-SNAPSHOT')
-    compile('com.github.rozidan:modelmapper-spring-boot-starter:1.0.1-SNAPSHOT')
-    compile('com.github.rozidan:logger-spring-boot:1.0.0-SNAPSHOT')
-    compile('org.springframework.kafka:spring-kafka')
-    compile('org.apache.kafka:kafka_2.11:1.0.0'){
-        exclude group: "org.slf4j"
-    }
-    compile('com.101tec:zkclient:0.7'){
-        exclude group: "org.slf4j"
-    }
-    compile('org.springframework.kafka:spring-kafka-test:2.1.2.RELEASE')
-    compile('org.toile-libre.libe:curl:0.0.13')
-    compile('org.mockito:mockito-all:1.10.19')
-    
-    
-    compile('io.springfox:springfox-swagger2:2.7.0')
-    compile('org.flywaydb:flyway-core')
-
-    compileOnly('org.projectlombok:lombok')
-
-    runtime('com.h2database:h2')
-
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    runtimeOnly 'com.h2database:h2'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
 
     jar {
         manifest {
@@ -79,10 +78,18 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 
 dependencyManagement {
     imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Edgware.RELEASE")
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:2021.0.7")
     }
     dependencies {
         dependency 'com.google.guava:guava:23.5-jre'
     }
 }
 
+allprojects {
+    configurations.all {
+        exclude group: 'log4j', module: 'log4j'
+        exclude group: 'org.slf4j', module: 'slf4j-reload4j'
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-api'
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-core'
+    }
+}

@@ -9,13 +9,13 @@ import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Matchers;
+import static org.mockito.ArgumentMatchers.*;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -30,7 +30,8 @@ import com.github.rozidan.springboot.modelmapper.WithModelMapper;
 
 @RunWith(SpringRunner.class)
 @WithModelMapper(basePackageClasses = MappingBasePackage.class)
-@ContextConfiguration(classes = DiaryServiceImpl.class, initializers = ConfigFileApplicationContextInitializer.class)
+@ContextConfiguration(classes = DiaryServiceImpl.class)
+@SpringBootTest
 public class DiaryServiceTest {
 
 	@Autowired
@@ -64,7 +65,7 @@ public class DiaryServiceTest {
         		assertTrue(toBeDeleted2.equals(entryname));
         		return null;
         	}
-        }).when(repository).deleteByUsernameAndEntryname(Matchers.any(String.class), Matchers.any(String.class));
+        }).when(repository).deleteByUsernameAndEntryname(anyString(), any(String.class));
         diaryService.removeByUsernameAndEntryname(username, entryname, pass);
     }
     
@@ -86,7 +87,7 @@ public class DiaryServiceTest {
                 .build();
         
         List<Diary> list = Arrays.asList(result1 , result2);
-        when(repository.findByUsername(Matchers.any(String.class))).thenReturn(list);
+        when(repository.findByUsername(any(String.class))).thenReturn(list);
         
         Mockito.doAnswer(new Answer<Object>() {
             @Override
@@ -96,7 +97,7 @@ public class DiaryServiceTest {
                 assertTrue(toBeDeleted1.equals(username));
                 return null;
             }
-        }).when(repository).deleteByUsernameAndEntryname(Matchers.any(String.class), Matchers.any(String.class));
+        }).when(repository).deleteByUsernameAndEntryname(any(String.class), any(String.class));
         diaryService.removeAll(username, pass);
     }
     
@@ -116,9 +117,9 @@ public class DiaryServiceTest {
                 .content(pass)
                 .build();
         Optional<Diary> opt = Optional.empty();
-        
-        when(repository.findByUsernameAndEntryname(Matchers.any(String.class), Matchers.any(String.class))).thenReturn(opt);
-        when(repository.save(Matchers.any(Diary.class))).thenReturn(intermidiate);
+
+        when(repository.findByUsernameAndEntryname(any(String.class), any(String.class))).thenReturn(opt);
+        when(repository.save(any(Diary.class))).thenReturn(intermidiate);
         DiaryDto dto = diaryService.add(result, pass);
         assertTrue(dto.getId().equals(result.getId()));
         assertTrue(dto.getUsername().equals(result.getUsername()));
@@ -136,9 +137,8 @@ public class DiaryServiceTest {
                 .content(pass)
                 .build();
         Optional<Diary> opt = Optional.of(result);
-        
-        when(repository.findByUsernameAndEntryname(Matchers.any(String.class), Matchers.any(String.class))).thenReturn(opt);
-        DiaryDto dto = diaryService.fetch(username, entryname, pass);
+
+        when(repository.findByUsernameAndEntryname(any(String.class), any(String.class))).thenReturn(opt);        DiaryDto dto = diaryService.fetch(username, entryname, pass);
         assertTrue(dto.getId().equals(result.getId()));
         assertTrue(dto.getUsername().equals(result.getUsername()));
         assertTrue(dto.getEntryname().equals(result.getEntryname()));
@@ -163,9 +163,8 @@ public class DiaryServiceTest {
                 .build();
         
         List<Diary> list = Arrays.asList(result1 , result2);
-        
-        when(repository.findByUsername(Matchers.any(String.class))).thenReturn(list);
-        List<DiaryDto> dtos = diaryService.fetchByUsername(username, pass);
+
+        when(repository.findByUsername(any(String.class))).thenReturn(list);        List<DiaryDto> dtos = diaryService.fetchByUsername(username, pass);
         assertTrue(dtos.get(0).getId().equals(result1.getId()));
         assertTrue(dtos.get(1).getId().equals(result2.getId()));
     }

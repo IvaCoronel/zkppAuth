@@ -13,6 +13,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,9 +27,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author Max Amelchenko
- */
 @Loggable(ignore = Exception.class)
 @Api(tags = "Diaries")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -48,10 +47,13 @@ public class DiaryController {
             @ApiResponse(code = 428, message = "Invalid user info", response = ErrorDto.class)})
     @ResponseStatus(code = HttpStatus.CREATED)
     @PostMapping
-    public DiaryDto add(@Validated @RequestBody DiaryDto dto, @RequestHeader(value="ZKAuth-Token", required=false) String token) {
-    	return diaryService.add(dto, token);
+    public ResponseEntity<DiaryDto> add(@Validated @RequestBody DiaryDto dto, @RequestHeader(value="ZKAuth-Token", required=false) String token) {
+        DiaryDto result = diaryService.add(dto, token);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(result);
     }
-   
+
     @ApiOperation("Delete entry")
     @ApiResponses({
             @ApiResponse(code = 200, message = "Entry has been removed"),

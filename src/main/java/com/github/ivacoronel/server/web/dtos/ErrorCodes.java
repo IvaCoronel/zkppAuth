@@ -1,8 +1,5 @@
 package com.github.ivacoronel.server.web.dtos;
 
-/**
- * @author Idan Rozenfeld
- */
 public enum ErrorCodes {
     UNAUTHORIZED,
     FORBIDDEN,

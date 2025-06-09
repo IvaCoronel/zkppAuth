@@ -23,9 +23,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author Max Amelchenko
- */
 @Loggable(ignore = Exception.class)
 @Api(tags = "Users")
 @RestController

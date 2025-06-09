@@ -4,9 +4,6 @@ import java.util.List;
 
 import com.github.ivacoronel.server.web.dtos.DiaryDto;
 
-/**
- * @author Max Amelchenko
- */
 public interface DiaryService {
 
 	public DiaryDto add(DiaryDto dto, String sessionId);

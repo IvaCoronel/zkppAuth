@@ -6,9 +6,6 @@ import org.springframework.security.access.AccessDeniedException;
 import com.github.ivacoronel.server.domain.model.User;
 import com.github.ivacoronel.server.web.dtos.UserDto;
 
-/**
- * @author Max Amelchenko
- */
 public interface UserService {
 
     public UserDto register(UserDto dto);

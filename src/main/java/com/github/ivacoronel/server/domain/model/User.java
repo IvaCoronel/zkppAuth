@@ -17,18 +17,16 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.NotEmpty;
 
-/**
- * @author Max Amelchenko
- */
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(uniqueConstraints =
+@Table( name = "users",
+        uniqueConstraints =
         {@UniqueConstraint(name = UserNameUnique.CONSTRAINT_NAME, columnNames = UserNameUnique.FIELD_NAME)})
 @SequenceGenerator(name = "userSeq", sequenceName = "user_seq")
 public class User extends AuditableEntity {

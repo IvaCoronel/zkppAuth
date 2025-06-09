@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.github.ivacoronel.server.domain.model.User;
@@ -29,7 +30,7 @@ public class UserRepositoryTest {
     @Autowired
     private UserRepository repository;
     
-    @Value("{test.username}")
+    @Value("${test.username}")
     private String username;
     
     @Value("${test.passwordless}")
@@ -42,7 +43,7 @@ public class UserRepositoryTest {
                 .passwordless(pass)
                 .build());
 
-        Optional<User> user = repository.findOne(persist.getId());
+        Optional<User> user = repository.findById(persist.getId());
         assertTrue(user.isPresent());
         assertThat(user.get().getName(), is(equalTo(username)));
         assertThat(user.get().getPasswordless(), is(equalTo(pass)));
@@ -68,8 +69,8 @@ public class UserRepositoryTest {
                 .passwordless(pass)
                 .build());
 
-        repository.delete(persist.getId());
-        Optional<User> user = repository.findOne(persist.getId());
+        repository.deleteById(persist.getId());
+        Optional<User> user = repository.findById(persist.getId());
         assertTrue(!user.isPresent());
 
     }
@@ -82,7 +83,7 @@ public class UserRepositoryTest {
                 .build());
 
         repository.deleteByName(persist.getName());
-        Optional<User> user = repository.findOne(persist.getId());
+        Optional<User> user = repository.findById(persist.getId());
         assertTrue(!user.isPresent());
 
     }

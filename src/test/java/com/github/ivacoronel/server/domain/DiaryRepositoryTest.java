@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.github.ivacoronel.server.domain.model.Diary;
@@ -46,7 +47,7 @@ public class DiaryRepositoryTest {
                 .content(content)
                 .build());
 
-        Optional<Diary> diary = repository.findOne(persist.getId());
+        Optional<Diary> diary = repository.findById(persist.getId());
         assertTrue(diary.isPresent());
         assertThat(diary.get().getUsername(), is(equalTo(username)));
         assertThat(diary.get().getEntryname(), is(equalTo(entryname)));
@@ -81,8 +82,8 @@ public class DiaryRepositoryTest {
                 .content(content)
                 .build());
 
-        repository.delete(persist.getId());
-        Optional<Diary> diary = repository.findOne(persist.getId());
+        repository.deleteById(persist.getId());
+        Optional<Diary> diary = repository.findById(persist.getId());
         assertTrue(!diary.isPresent());
 
     }
@@ -96,7 +97,7 @@ public class DiaryRepositoryTest {
                 .build());
 
         repository.deleteByUsernameAndEntryname(persist.getUsername(), persist.getEntryname());
-        Optional<Diary> diary = repository.findOne(persist.getId());
+        Optional<Diary> diary = repository.findById(persist.getId());
         assertTrue(!diary.isPresent());
     }
     

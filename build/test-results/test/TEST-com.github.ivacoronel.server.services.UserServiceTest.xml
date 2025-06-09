@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.github.ivacoronel.server.services.UserServiceTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2025-06-09T02:08:13" hostname="gercos" time="0.13">
+  <properties/>
+  <testcase name="fetchWaitToValidate" classname="com.github.ivacoronel.server.services.UserServiceTest" time="0.024"/>
+  <testcase name="findByNameExistingUser" classname="com.github.ivacoronel.server.services.UserServiceTest" time="0.007"/>
+  <testcase name="removeByName" classname="com.github.ivacoronel.server.services.UserServiceTest" time="0.015"/>
+  <testcase name="removeByNameNoSecret" classname="com.github.ivacoronel.server.services.UserServiceTest" time="0.012"/>
+  <testcase name="verifyIncorrect" classname="com.github.ivacoronel.server.services.UserServiceTest" time="0.006"/>
+  <testcase name="register" classname="com.github.ivacoronel.server.services.UserServiceTest" time="0.003"/>
+  <testcase name="fetch" classname="com.github.ivacoronel.server.services.UserServiceTest" time="0.007"/>
+  <testcase name="generateServerSecret" classname="com.github.ivacoronel.server.services.UserServiceTest" time="0.003"/>
+  <testcase name="removeNonExistentUser" classname="com.github.ivacoronel.server.services.UserServiceTest" time="0.003"/>
+  <testcase name="fetchAuthenticationError" classname="com.github.ivacoronel.server.services.UserServiceTest" time="0.01"/>
+  <testcase name="verifyCorrect" classname="com.github.ivacoronel.server.services.UserServiceTest" time="0.007"/>
+  <testcase name="fetchNoSecret" classname="com.github.ivacoronel.server.services.UserServiceTest" time="0.008"/>
+  <system-out><![CDATA[2025-06-08 23:08:13.672  INFO 212079 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.github.ivacoronel.server.services.UserServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-06-08 23:08:13.679  INFO 212079 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2025-06-08 23:08:13.680  INFO 212079 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@223e59cd, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4df86841, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@69b68042, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4190c9f4, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1130003a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1f04d83d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@426def0f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@57551df, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@14d5a09b, org.springframework.test.context.event.EventPublishingTestExecutionListener@2da9570c, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@91c021, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2f458245, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@162d3e4e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@71db1ab0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7f455c62, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@7c91be65, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@33120f7]
+2025-06-08 23:08:13.683  INFO 212079 --- [    Test worker] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  _________            .__              ______________  __.  _____          __  .__     
+ /   _____/____________|__| ____    ____\____    /    |/ _| /  _  \  __ ___/  |_|  |__  
+ \_____  \\____ \_  __ \  |/    \  / ___\ /     /|      <  /  /_\  \|  |  \   __\  |  \ 
+ /        \  |_> >  | \/  |   |  \/ /_/  >     /_|    |  \/    |    \  |  /|  | |   Y  \
+/_______  /   __/|__|  |__|___|  /\___  /_______ \____|__ \____|__  /____/ |__| |___|  /
+        \/|__|                 \//_____/        \/       \/       \/                 \/ 
+::::  
+
+2025-06-08 23:08:13.767  INFO 212079 --- [    Test worker] c.g.i.server.services.UserServiceTest    : Starting UserServiceTest using Java 11.0.27 on gercos with PID 212079 (started by ivana in /home/ivana/projects/SpringZKAuth)
+2025-06-08 23:08:13.768  INFO 212079 --- [    Test worker] c.g.i.server.services.UserServiceTest    : No active profile set, falling back to 1 default profile: "default"
+2025-06-08 23:08:13.770  INFO 212079 --- [    Test worker] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-06-08 23:08:13.770  INFO 212079 --- [    Test worker] o.s.c.c.c.ConfigServerConfigDataLoader   : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2025-06-08 23:08:13.770  WARN 212079 --- [    Test worker] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServerConfigDataResource@2d5d5a8 uris = array<String>['http://localhost:8888'], optional = true, profiles = list['default']]): I/O error on GET request for "http://localhost:8888/application/default": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+2025-06-08 23:08:13.947  INFO 212079 --- [    Test worker] c.g.i.server.services.UserServiceTest    : Started UserServiceTest in 0.265 seconds (JVM running for 9.536)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

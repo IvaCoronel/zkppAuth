@@ -3,10 +3,6 @@ package com.github.ivacoronel.server.services.impl;
 import java.util.HashSet;
 import java.util.Properties;
 
-import org.I0Itec.zkclient.ZkClient;
-import org.I0Itec.zkclient.ZkConnection;
-import org.I0Itec.zkclient.exception.ZkMarshallingError;
-import org.I0Itec.zkclient.serialize.ZkSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,89 +18,74 @@ import com.github.ivacoronel.server.services.KafkaAgentService;
 import com.github.ivacoronel.server.web.dtos.ChallengeDto;
 import com.github.rozidan.springboot.logger.Loggable;
 
-import kafka.admin.AdminUtils;
-import kafka.admin.RackAwareMode;
-import kafka.utils.ZKStringSerializer;
-import kafka.utils.ZkUtils;
+import org.apache.kafka.clients.admin.AdminClient;
+import org.apache.kafka.clients.admin.AdminClientConfig;
+import org.apache.kafka.clients.admin.NewTopic;
 
 @Service
 @ConditionalOnProperty(value = "kafka.enabled", havingValue = "true")
-public class KafkaAgentServiceImpl implements KafkaAgentService{
+public class KafkaAgentServiceImpl implements KafkaAgentService {
 
     private final KafkaTemplate<String, ChallengeDto> kafkaTemplate;
+    private final AdminClient adminClient;
+    private final HashSet<String> openTopics = new HashSet<>();
+    private static final Logger logger = LoggerFactory.getLogger(KafkaAgentServiceImpl.class);
 
-    private final ZkUtils zkUtils;
-
-    private final HashSet<String> openTopics = new HashSet<String>();
-
-    public KafkaAgentServiceImpl(@Value("${kafka.zookeeper.url}") String zkAddress, KafkaTemplate<String, ChallengeDto> kafkaTemplate)
-    {
-    	ZkClient zkClient = new ZkClient(zkAddress,10000,10000);
-        zkClient.setZkSerializer(getZkSerializer());
-        boolean isSecureKafkaCluster = false;
-        // ZkUtils for Kafka was used in Kafka 0.9.0.0 for the AdminUtils API
-        this.zkUtils = new ZkUtils(zkClient, new ZkConnection(zkAddress), isSecureKafkaCluster);
+    public KafkaAgentServiceImpl(
+            @Value("${kafka.bootstrap.servers}") String bootstrapServers,
+            KafkaTemplate<String, ChallengeDto> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
+
+        // Configurar AdminClient
+        Properties config = new Properties();
+        config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        this.adminClient = AdminClient.create(config);
     }
 
     @Loggable
     @Override
     public void send(String topic, ChallengeDto chal) {
-        //make sure all messages with the same id will be ordered in the same partition
         ListenableFuture<SendResult<String, ChallengeDto>> future = kafkaTemplate.send(topic, chal);
-        // register a callback with the listener to receive the result of the send
-        // asynchronously
         future.addCallback(new ListenableFutureCallback<SendResult<String, ChallengeDto>>() {
-
             @Override
             public void onSuccess(SendResult<String, ChallengeDto> result) {
-                Logger log = LoggerFactory.getLogger(KafkaAgentServiceImpl.class);
-                log.info("Published message to kafka...");
+                logger.info("Published message to kafka...");
             }
 
             @Override
             public void onFailure(Throwable ex) {
-                Logger log = LoggerFactory.getLogger(KafkaAgentServiceImpl.class);
-                log.info("Failed publishing message to kafka..." + ex.getMessage());
+                logger.error("Failed publishing message to kafka...", ex);
             }
         });
-
     }
+
     @Loggable
     @Override
-    public void openTopic(String topic)
-    {
+    public void openTopic(String topic) {
         if (openTopics.contains(topic)) return;
-        // Add topic configuration here
-        if (!AdminUtils.topicExists(zkUtils, topic))
-            AdminUtils.createTopic(zkUtils, topic, 1, 1, new Properties(), RackAwareMode.Disabled$.MODULE$);
 
-        openTopics.add(topic);
+        try {
+            // Comprobar si el topic existe
+            boolean exists = adminClient.listTopics().names().get().contains(topic);
+            if (!exists) {
+                // Crear topic: 1 partición, 1 réplica
+                NewTopic newTopic = new NewTopic(topic, 1, (short) 1);
+                adminClient.createTopics(java.util.Collections.singleton(newTopic)).all().get();
+            }
+            openTopics.add(topic);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to open/create topic: " + topic, e);
+        }
     }
+
     @Loggable
     @Override
-    public void closeTopic(String topic)
-    {
-        // Add topic configuration here
-        AdminUtils.deleteTopic(zkUtils, topic);
-        openTopics.remove(topic); 
-    }
-
-    private ZkSerializer getZkSerializer() {
-        return new ZkSerializer() {
-            @Override
-            public byte[] serialize(Object o)
-                    throws ZkMarshallingError
-            {
-                return ZKStringSerializer.serialize(o);
-            }
-
-            @Override
-            public Object deserialize(byte[] bytes)
-                    throws ZkMarshallingError
-            {
-                return ZKStringSerializer.deserialize(bytes);
-            }
-        };
+    public void closeTopic(String topic) {
+        try {
+            adminClient.deleteTopics(java.util.Collections.singleton(topic)).all().get();
+            openTopics.remove(topic);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to delete topic: " + topic, e);
+        }
     }
 }
