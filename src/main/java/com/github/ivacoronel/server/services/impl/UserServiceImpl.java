@@ -77,11 +77,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void removeByName(String name, String sessionId) {
+    public void removeByName(String name, String token) {
         User user = repository.findByName(name).orElseThrow(() -> new EmptyResultDataAccessException("No user found with name: " + name, 1));
-        if (user.getSecret()!=null && verify(user,sessionId)) 
+        if (user.getSecret()!=null && verify(user,token))
         {
-            diaryService.removeAll(name, sessionId);
+            diaryService.removeAll(name, token);
             repository.deleteByName(name);
         }
         else 
@@ -92,10 +92,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, noRollbackFor = {AccessDeniedException.class, EmptyResultDataAccessException.class})
-    public UserDto fetch(String name, String sessionId) throws AccessDeniedException, EmptyResultDataAccessException{        
+    public UserDto fetch(String name, String token) throws AccessDeniedException, EmptyResultDataAccessException{
         User user = repository.findByName(name).orElseThrow(() -> new EmptyResultDataAccessException("No user found with name: " + name, 1));
         
-        if (user.getSecret()!=null && verify(user,sessionId)) 
+        if (user.getSecret()!=null && verify(user,token))
         {
             return mapper.map(user, UserDto.class);
         }
@@ -106,14 +106,14 @@ public class UserServiceImpl implements UserService {
         return null;
     }
     
-    private boolean verify(User user,String response)
+    private boolean verify(User user,String token)
     {
         BigInteger passwordless = new BigInteger(user.getPasswordless(),16); 
         BigInteger secret = new BigInteger(user.getSecret(), 16);
     
         BigInteger verify = passwordless.modPow(secret, new BigInteger(prime,16));
         
-        if (equals(verify.toString(), response))
+        if (equals(verify.toString(), token))
         {
             SessionStatus status = user.getSstatus();
             if (!user.getSstatus().equals(SessionStatus.VALIDATED))
@@ -166,7 +166,7 @@ public class UserServiceImpl implements UserService {
         BigInteger bigint =  new BigInteger(256, random);
         user.setSecret(bigint.toString(16));
         user.setSstatus(SessionStatus.INITIATING);
-        repository.save(user);                
+         repository.save(user);
     }
 
     private void scheduleAuthTask(User user) 

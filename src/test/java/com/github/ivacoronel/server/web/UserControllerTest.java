@@ -61,8 +61,8 @@ public class UserControllerTest {
     @Value("${test.passwordless}")
     private String pass;
 
-    private final static String users = "/users";
-    private final static String usersMike = "/users/Mike";
+    private final static String users = "/zkauth/users";
+    private final static String usersMike = "/zkauth/users/Mike";
     private final static String NOT_FOUND = "Not found";
     private final static String message = "$.message";
     private final static String errorCode = "$.errorCode";
@@ -243,7 +243,7 @@ public class UserControllerTest {
     }
 
     @Test
-    public void fetchWrongSessionId() throws Exception {
+    public void fetchWrongToken() throws Exception {
         when(service.fetch(any(String.class), any(String.class)))
         .thenThrow(new AccessDeniedException(pass));
         mvc.perform(get(usersMike)
@@ -291,7 +291,7 @@ public class UserControllerTest {
 
     @Test
     @WithMockUser(username = "user")
-    public void removeWrongSessionId() throws Exception {
+    public void removeWrongToken() throws Exception {
         doThrow(new AccessDeniedException(pass)).when(service).removeByName(any(String.class), any(String.class));
         mvc.perform(delete(usersMike)
                         .with(csrf())

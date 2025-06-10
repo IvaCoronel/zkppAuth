@@ -10,9 +10,9 @@ public interface UserService {
 
     public UserDto register(UserDto dto);
 
-    public void removeByName(String name, String sessionId);
+    public void removeByName(String name, String token);
     
-    public UserDto fetch(String name, String sessionId) throws AccessDeniedException, EmptyResultDataAccessException;
+    public UserDto fetch(String name, String token) throws AccessDeniedException, EmptyResultDataAccessException;
 
     public void generateServerSecret(User user);
 }

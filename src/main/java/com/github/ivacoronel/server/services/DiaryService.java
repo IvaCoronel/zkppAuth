@@ -6,13 +6,13 @@ import com.github.ivacoronel.server.web.dtos.DiaryDto;
 
 public interface DiaryService {
 
-	public DiaryDto add(DiaryDto dto, String sessionId);
+	public DiaryDto add(DiaryDto dto, String token);
 	
-    public void removeByUsernameAndEntryname(String username, String entryname, String sessionId);
+    public void removeByUsernameAndEntryname(String username, String entryname, String token);
     
-    public void removeAll(String username, String sessionId);
+    public void removeAll(String username, String token);
     
-    public DiaryDto fetch(String username, String entryname, String sessionId);
+    public DiaryDto fetch(String username, String entryname, String token);
 
-    public List<DiaryDto> fetchByUsername(String username, String sessionId);
+    public List<DiaryDto> fetchByUsername(String username, String token);
 }

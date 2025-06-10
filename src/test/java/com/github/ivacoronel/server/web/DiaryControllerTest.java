@@ -68,9 +68,9 @@ public class DiaryControllerTest {
     @Value("${test.passwordless}")
     private String pass;
     
-    private final static String diary = "/diary";
-    private final static String diaryUser = "/diary/John/";
-    private final static String diaryUserEntry = "/diary/John/MyDiary/";
+    private final static String diary = "/zkauth/diary";
+    private final static String diaryUser = "/zkauth/diary/John/";
+    private final static String diaryUserEntry = "/zkauth/diary/John/MyDiary/";
     private final static String errorCode = "$.errorCode";
     private final static String errors = "$.errors";
 

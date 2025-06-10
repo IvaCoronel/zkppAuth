@@ -9,7 +9,6 @@ import com.github.ivacoronel.server.services.UserService;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -37,8 +36,8 @@ public class DiaryServiceImpl implements DiaryService {
 
     @Override
     @Transactional
-    public DiaryDto add(DiaryDto dto, String sessionId) {
-    	userService.fetch(dto.getUsername(), sessionId);
+    public DiaryDto add(DiaryDto dto, String token) {
+    	userService.fetch(dto.getUsername(), token);
         Diary diary = mapper.map(dto, Diary.class);
         Diary newdiary = repository.save(diary);
         return mapper.map(newdiary, DiaryDto.class);
@@ -46,31 +45,31 @@ public class DiaryServiceImpl implements DiaryService {
     
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public void removeByUsernameAndEntryname(String username, String entryname, String sessionId) {
-    	userService.fetch(username, sessionId);
+    public void removeByUsernameAndEntryname(String username, String entryname, String token) {
+    	userService.fetch(username, token);
         repository.deleteByUsernameAndEntryname(username, entryname);
     }
 
     @Override
     @Transactional
-    public DiaryDto fetch(String username, String entryname, String sessionId) {  
-    	userService.fetch(username, sessionId);
+    public DiaryDto fetch(String username, String entryname, String token) {
+    	userService.fetch(username, token);
         Diary diary = repository.findByUsernameAndEntryname(username, entryname).orElseThrow(() -> new EmptyResultDataAccessException("No diary entry found for user: " + username + " and entry " + entryname, 1));
         return mapper.map(diary, DiaryDto.class);
     }
 
     @Override
     @Transactional
-    public List<DiaryDto> fetchByUsername(String username, String sessionId) {
-    	userService.fetch(username, sessionId);
+    public List<DiaryDto> fetchByUsername(String username, String token) {
+    	userService.fetch(username, token);
         List<Diary> entries = repository.findByUsername(username);
         return entries.stream().map(d -> mapper.map(d, DiaryDto.class)).collect(Collectors.toList());
     }
 
     @Override
     @Transactional
-    public void removeAll(String username, String sessionId) {
-        userService.fetch(username, sessionId);
+    public void removeAll(String username, String token) {
+        userService.fetch(username, token);
         List<Diary> list = repository.findByUsername(username);
         for (Diary d : list)
             repository.deleteByUsernameAndEntryname(username, d.getEntryname());
