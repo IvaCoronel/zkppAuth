@@ -45,13 +45,7 @@ public class UserServiceTest {
     private UserRepository repository;
     
     @MockBean
-    private ScheduleTaskService scheduler;
-    
-    @MockBean
     private DiaryService diaryService;
-    
-    @MockBean
-    private KafkaAgentService kafkaService;
     
     @Value("${test.passwordless}")
     private String pass;

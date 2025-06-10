@@ -36,7 +36,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-devtools'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
-    implementation 'org.apache.kafka:kafka-clients:3.5.1'
     implementation 'org.springframework:spring-context'
     implementation 'org.flywaydb:flyway-core'
     implementation 'io.springfox:springfox-swagger2:2.7.0'
@@ -49,7 +48,6 @@ dependencies {
     implementation 'org.hibernate.validator:hibernate-validator:6.1.5.Final'
     implementation 'javax.validation:validation-api:2.0.1.Final'
     implementation 'org.glassfish:javax.el:3.0.0'
-    implementation 'org.springframework.kafka:spring-kafka:2.9.0'
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.mockito:mockito-core:4.11.0'
 
