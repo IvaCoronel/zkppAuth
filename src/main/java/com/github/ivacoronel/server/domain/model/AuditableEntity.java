@@ -16,9 +16,6 @@ public class AuditableEntity {
     @CreatedBy
     private String createdBy;
 
-
     @LastModifiedBy
     private String lastModifiedBy;
-
-
 }
