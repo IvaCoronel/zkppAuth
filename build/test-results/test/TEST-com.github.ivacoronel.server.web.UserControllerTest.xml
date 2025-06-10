@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.github.ivacoronel.server.web.UserControllerTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2025-06-10T03:28:21" hostname="gercos" time="0.231">
+<testsuite name="com.github.ivacoronel.server.web.UserControllerTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2025-06-10T03:38:56" hostname="gercos" time="0.249">
   <properties/>
   <testcase name="IncorrectMethod" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.033"/>
-  <testcase name="registerSuccess" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.029"/>
-  <testcase name="registerValidationFailedUniqueName" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.017"/>
-  <testcase name="InternalServerError" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.045"/>
-  <testcase name="fetchNotFound" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.012"/>
-  <testcase name="UnknownPath" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.01"/>
-  <testcase name="removeSuccess" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.01"/>
+  <testcase name="registerSuccess" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.034"/>
+  <testcase name="registerValidationFailedUniqueName" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.02"/>
+  <testcase name="InternalServerError" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.055"/>
+  <testcase name="fetchNotFound" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.013"/>
+  <testcase name="UnknownPath" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.012"/>
+  <testcase name="removeSuccess" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.011"/>
   <testcase name="dataIntegrityViolation" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.013"/>
-  <testcase name="fetchWrongToken" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.013"/>
-  <testcase name="removeNotFound" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.011"/>
-  <testcase name="fetchSuccess" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.012"/>
-  <testcase name="removeWrongToken" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.013"/>
-  <system-out><![CDATA[2025-06-10 00:28:20.669  INFO 19858 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.github.ivacoronel.server.web.UserControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2025-06-10 00:28:20.676  INFO 19858 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.github.ivacoronel.server.ZKAuthApplication for test class com.github.ivacoronel.server.web.UserControllerTest
-2025-06-10 00:28:20.677  INFO 19858 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2025-06-10 00:28:20.678  INFO 19858 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3f904e41, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@76a54c24, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4548a33f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7c1a5160, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@41c5fae4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1d5d5a94, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1d8c535b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@33b380db, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@5dcf4e93, org.springframework.test.context.event.EventPublishingTestExecutionListener@2ab13644, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@5558bec2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7a4259ea, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5dde2be7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7efe250e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6ec03abd, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6a5b386, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2a0831a6]
-2025-06-10 00:28:20.681  INFO 19858 --- [    Test worker] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+  <testcase name="fetchWrongToken" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.012"/>
+  <testcase name="removeNotFound" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.012"/>
+  <testcase name="fetchSuccess" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.01"/>
+  <testcase name="removeWrongToken" classname="com.github.ivacoronel.server.web.UserControllerTest" time="0.012"/>
+  <system-out><![CDATA[2025-06-10 00:38:56.048  INFO 20863 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.github.ivacoronel.server.web.UserControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-06-10 00:38:56.054  INFO 20863 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.github.ivacoronel.server.ZKAuthApplication for test class com.github.ivacoronel.server.web.UserControllerTest
+2025-06-10 00:38:56.055  INFO 20863 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2025-06-10 00:38:56.056  INFO 20863 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7c1a5160, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@41c5fae4, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1d5d5a94, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1d8c535b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@33b380db, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5dcf4e93, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2ab13644, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5558bec2, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@7a4259ea, org.springframework.test.context.event.EventPublishingTestExecutionListener@5dde2be7, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@7efe250e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6ec03abd, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6a5b386, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2a0831a6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@25d1a7bc, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4aab7469, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6139d739]
+2025-06-10 00:38:56.059  INFO 20863 --- [    Test worker] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
 
   _________            .__              ______________  __.  _____          __  .__     
  /   _____/____________|__| ____    ____\____    /    |/ _| /  _  \  __ ___/  |_|  |__  
@@ -27,39 +27,39 @@
         \/|__|                 \//_____/        \/       \/       \/                 \/ 
 ::::  
 
-2025-06-10 00:28:20.751  INFO 19858 --- [    Test worker] c.g.i.server.web.UserControllerTest      : Starting UserControllerTest using Java 11.0.17 on gercos with PID 19858 (started by ivana in /home/ivana/projects/SpringZKAuth)
-2025-06-10 00:28:20.752  INFO 19858 --- [    Test worker] c.g.i.server.web.UserControllerTest      : No active profile set, falling back to 1 default profile: "default"
-2025-06-10 00:28:20.754  INFO 19858 --- [    Test worker] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
-2025-06-10 00:28:20.755  INFO 19858 --- [    Test worker] o.s.c.c.c.ConfigServerConfigDataLoader   : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
-2025-06-10 00:28:20.755  WARN 19858 --- [    Test worker] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServerConfigDataResource@5f7df488 uris = array<String>['http://localhost:8888'], optional = true, profiles = list['default']]): I/O error on GET request for "http://localhost:8888/application/default": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
-2025-06-10 00:28:21.222  WARN 19858 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+2025-06-10 00:38:56.130  INFO 20863 --- [    Test worker] c.g.i.server.web.UserControllerTest      : Starting UserControllerTest using Java 11.0.17 on gercos with PID 20863 (started by ivana in /home/ivana/projects/SpringZKAuth)
+2025-06-10 00:38:56.130  INFO 20863 --- [    Test worker] c.g.i.server.web.UserControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2025-06-10 00:38:56.132  INFO 20863 --- [    Test worker] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-06-10 00:38:56.133  INFO 20863 --- [    Test worker] o.s.c.c.c.ConfigServerConfigDataLoader   : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2025-06-10 00:38:56.133  WARN 20863 --- [    Test worker] o.s.c.c.c.ConfigServerConfigDataLoader   : Could not locate PropertySource ([ConfigServerConfigDataResource@4100858a uris = array<String>['http://localhost:8888'], optional = true, profiles = list['default']]): I/O error on GET request for "http://localhost:8888/application/default": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+2025-06-10 00:38:56.552  WARN 20863 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
 
-Using generated security password: ec6c9cf0-ee43-47e1-8ed7-846270798148
+Using generated security password: dbe8386a-a60c-453f-84ca-fbd6a13f3e32
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-06-10 00:28:21.274 DEBUG 19858 --- [    Test worker] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/zkauth/users/**', POST]
-2025-06-10 00:28:21.275 DEBUG 19858 --- [    Test worker] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/zkauth/diary/**', POST]
-2025-06-10 00:28:21.275 DEBUG 19858 --- [    Test worker] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/zkauth/diary/**', GET]
-2025-06-10 00:28:21.275 DEBUG 19858 --- [    Test worker] edFilterInvocationSecurityMetadataSource : Adding web access control expression [authenticated] for any request
-2025-06-10 00:28:21.285  INFO 19858 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5fbae014, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34c9c391, org.springframework.security.web.context.SecurityContextPersistenceFilter@1618d56f, org.springframework.security.web.header.HeaderWriterFilter@30ab39ff, org.springframework.web.filter.CorsFilter@6cb899e8, org.springframework.security.web.authentication.logout.LogoutFilter@6d9f27a2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5fb0f9f2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@664bc117, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f4678e0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@349f92e4, org.springframework.security.web.session.SessionManagementFilter@32f00f18, org.springframework.security.web.access.ExceptionTranslationFilter@2e8bc50e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52415d15]
-2025-06-10 00:28:21.324  INFO 19858 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-06-10 00:28:21.324  INFO 19858 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-06-10 00:28:21.324  INFO 19858 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2025-06-10 00:28:21.337  INFO 19858 --- [    Test worker] c.g.i.server.web.UserControllerTest      : Started UserControllerTest in 0.656 seconds (JVM running for 12.307)
-2025-06-10 00:28:21.348 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
-2025-06-10 00:28:21.348 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@7ee1a9a1]
-2025-06-10 00:28:21.349 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /zkauth/users
-2025-06-10 00:28:21.349 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.350 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.356 DEBUG 19858 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /zkauth/users] with attributes [authenticated]
-2025-06-10 00:28:21.357 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured GET /zkauth/users
-2025-06-10 00:28:21.368 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-10 00:38:56.594 DEBUG 20863 --- [    Test worker] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/zkauth/users/**', POST]
+2025-06-10 00:38:56.594 DEBUG 20863 --- [    Test worker] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/zkauth/diary/**', POST]
+2025-06-10 00:38:56.594 DEBUG 20863 --- [    Test worker] edFilterInvocationSecurityMetadataSource : Adding web access control expression [permitAll] for Ant [pattern='/zkauth/diary/**', GET]
+2025-06-10 00:38:56.595 DEBUG 20863 --- [    Test worker] edFilterInvocationSecurityMetadataSource : Adding web access control expression [authenticated] for any request
+2025-06-10 00:38:56.604  INFO 20863 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@349f92e4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3cad7e23, org.springframework.security.web.context.SecurityContextPersistenceFilter@3dfc2edf, org.springframework.security.web.header.HeaderWriterFilter@664bc117, org.springframework.web.filter.CorsFilter@4602e76c, org.springframework.security.web.authentication.logout.LogoutFilter@358fa269, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6cb899e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d9f27a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5564107f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e5d419d, org.springframework.security.web.session.SessionManagementFilter@f4678e0, org.springframework.security.web.access.ExceptionTranslationFilter@1618d56f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@34c9c391]
+2025-06-10 00:38:56.638  INFO 20863 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-06-10 00:38:56.638  INFO 20863 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-06-10 00:38:56.639  INFO 20863 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-06-10 00:38:56.654  INFO 20863 --- [    Test worker] c.g.i.server.web.UserControllerTest      : Started UserControllerTest in 0.595 seconds (JVM running for 12.32)
+2025-06-10 00:38:56.667 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
+2025-06-10 00:38:56.667 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@1c757fc8]
+2025-06-10 00:38:56.668 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /zkauth/users
+2025-06-10 00:38:56.668 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.668 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.675 DEBUG 20863 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /zkauth/users] with attributes [authenticated]
+2025-06-10 00:38:56.675 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured GET /zkauth/users
+2025-06-10 00:38:56.686 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
 
 MockHttpServletRequest:
       HTTP Method = GET
       Request URI = /zkauth/users
-       Parameters = {_csrf=[19942e02-d5c2-467f-9511-34859cef2d20]}
+       Parameters = {_csrf=[a5655d77-a33d-4ec5-98db-da4e16e66e8a]}
           Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token", Content-Length:"629"]
              Body = {
   "createdBy" : null,
@@ -97,19 +97,19 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2025-06-10 00:28:21.379 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
-2025-06-10 00:28:21.379 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@bdefef6]
-2025-06-10 00:28:21.380 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /zkauth/users
-2025-06-10 00:28:21.380 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.380 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.381 DEBUG 19858 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /zkauth/users] with attributes [permitAll]
-2025-06-10 00:28:21.382 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /zkauth/users
-2025-06-10 00:28:21.400 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-10 00:38:56.696 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
+2025-06-10 00:38:56.696 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@347dff25]
+2025-06-10 00:38:56.697 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /zkauth/users
+2025-06-10 00:38:56.697 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.697 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.698 DEBUG 20863 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /zkauth/users] with attributes [permitAll]
+2025-06-10 00:38:56.699 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /zkauth/users
+2025-06-10 00:38:56.720 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
 
 MockHttpServletRequest:
       HTTP Method = POST
       Request URI = /zkauth/users
-       Parameters = {_csrf=[7c5af6aa-f708-4f8c-866d-3aba69874076]}
+       Parameters = {_csrf=[209598ea-2192-474a-90af-3b951f2092b1]}
           Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token", Content-Length:"629"]
              Body = {
   "createdBy" : null,
@@ -148,19 +148,19 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2025-06-10 00:28:21.409 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
-2025-06-10 00:28:21.410 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@3ccaf20d]
-2025-06-10 00:28:21.410 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /zkauth/users
-2025-06-10 00:28:21.411 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.411 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.412 DEBUG 19858 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /zkauth/users] with attributes [permitAll]
-2025-06-10 00:28:21.412 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /zkauth/users
-2025-06-10 00:28:21.418 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-10 00:38:56.732 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
+2025-06-10 00:38:56.733 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@429021c3]
+2025-06-10 00:38:56.733 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /zkauth/users
+2025-06-10 00:38:56.734 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.734 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.735 DEBUG 20863 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /zkauth/users] with attributes [permitAll]
+2025-06-10 00:38:56.735 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /zkauth/users
+2025-06-10 00:38:56.742 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
 
 MockHttpServletRequest:
       HTTP Method = POST
       Request URI = /zkauth/users
-       Parameters = {_csrf=[4a35b7b5-9e79-4cc9-ab2b-7534c2a46136]}
+       Parameters = {_csrf=[e19818b8-08cd-4c7a-90c7-ae320a0b3ab4]}
           Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token", Content-Length:"629"]
              Body = {
   "createdBy" : null,
@@ -199,14 +199,14 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2025-06-10 00:28:21.429 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
-2025-06-10 00:28:21.429 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@47833232]
-2025-06-10 00:28:21.430 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /zkauth/users
-2025-06-10 00:28:21.431 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.431 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.432 DEBUG 19858 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /zkauth/users] with attributes [permitAll]
-2025-06-10 00:28:21.433 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /zkauth/users
-2025-06-10 00:28:21.462 ERROR 19858 --- [    Test worker] c.g.i.s.w.handlers.GlobalErrorHandlers   : Global error handler exception: 
+2025-06-10 00:38:56.755 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
+2025-06-10 00:38:56.756 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@362146f5]
+2025-06-10 00:38:56.756 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /zkauth/users
+2025-06-10 00:38:56.757 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.757 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.758 DEBUG 20863 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /zkauth/users] with attributes [permitAll]
+2025-06-10 00:38:56.759 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /zkauth/users
+2025-06-10 00:38:56.794 ERROR 20863 --- [    Test worker] c.g.i.s.w.handlers.GlobalErrorHandlers   : Global error handler exception: 
 
 org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.github.ivacoronel.server.web.dtos.UserDto com.github.ivacoronel.server.web.controllers.UserController.register(com.github.ivacoronel.server.web.dtos.UserDto) with 2 errors: [Field error in object 'userDto' on field 'name': rejected value [null]; codes [NotEmpty.userDto.name,NotEmpty.name,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userDto.name,name]; arguments []; default message [name]]; default message [must not be empty]] [Field error in object 'userDto' on field 'passwordless': rejected value [null]; codes [NotNull.userDto.passwordless,NotNull.passwordless,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userDto.passwordless,passwordless]; arguments []; default message [passwordless]]; default message [must not be null]] 
 	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:141) ~[spring-webmvc-5.3.31.jar:5.3.31]
@@ -334,12 +334,12 @@ org.springframework.web.bind.MethodArgumentNotValidException: Validation failed 
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:na]
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:na]
 
-2025-06-10 00:28:21.465 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-10 00:38:56.800 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
 
 MockHttpServletRequest:
       HTTP Method = POST
       Request URI = /zkauth/users
-       Parameters = {_csrf=[723ebbf3-16d3-4527-92f3-810177dbecc6]}
+       Parameters = {_csrf=[1056e133-5811-440c-bf4b-b5d7e82abe67]}
           Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token", Content-Length:"583"]
              Body = {
   "createdBy" : null,
@@ -376,19 +376,19 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2025-06-10 00:28:21.473 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
-2025-06-10 00:28:21.473 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@392b1781]
-2025-06-10 00:28:21.474 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /zkauth/users/Mike
-2025-06-10 00:28:21.474 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.474 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.475 DEBUG 19858 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /zkauth/users/Mike] with attributes [authenticated]
-2025-06-10 00:28:21.476 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured GET /zkauth/users/Mike
-2025-06-10 00:28:21.479 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-10 00:38:56.809 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
+2025-06-10 00:38:56.809 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@7b894f5f]
+2025-06-10 00:38:56.810 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /zkauth/users/Mike
+2025-06-10 00:38:56.810 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.810 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.811 DEBUG 20863 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /zkauth/users/Mike] with attributes [authenticated]
+2025-06-10 00:38:56.811 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured GET /zkauth/users/Mike
+2025-06-10 00:38:56.815 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
 
 MockHttpServletRequest:
       HTTP Method = GET
       Request URI = /zkauth/users/Mike
-       Parameters = {_csrf=[b8288010-1b13-4b24-91d1-38762442b7ab]}
+       Parameters = {_csrf=[40663fc5-d373-4d5d-95db-7e7d04fe05a1]}
           Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token"]
              Body = null
     Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
@@ -421,19 +421,19 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2025-06-10 00:28:21.486 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
-2025-06-10 00:28:21.486 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@7588e9a2]
-2025-06-10 00:28:21.487 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /unknown
-2025-06-10 00:28:21.487 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.487 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.488 DEBUG 19858 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /unknown] with attributes [authenticated]
-2025-06-10 00:28:21.489 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /unknown
-2025-06-10 00:28:21.491 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-10 00:38:56.822 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
+2025-06-10 00:38:56.823 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@2c59abe2]
+2025-06-10 00:38:56.823 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /unknown
+2025-06-10 00:38:56.824 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.824 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.825 DEBUG 20863 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /unknown] with attributes [authenticated]
+2025-06-10 00:38:56.825 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /unknown
+2025-06-10 00:38:56.828 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
 
 MockHttpServletRequest:
       HTTP Method = POST
       Request URI = /unknown
-       Parameters = {_csrf=[758e5a3c-f5e8-46c0-aba7-bf0dcb84ed76]}
+       Parameters = {_csrf=[a9a8936d-beb9-458e-932c-073938d15cd8]}
           Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token", Content-Length:"629"]
              Body = {
   "createdBy" : null,
@@ -471,19 +471,19 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2025-06-10 00:28:21.498 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
-2025-06-10 00:28:21.498 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@2c59abe2]
-2025-06-10 00:28:21.499 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing DELETE /zkauth/users/Mike
-2025-06-10 00:28:21.499 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.499 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.500 DEBUG 19858 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [DELETE /zkauth/users/Mike] with attributes [authenticated]
-2025-06-10 00:28:21.500 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured DELETE /zkauth/users/Mike
-2025-06-10 00:28:21.502 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-10 00:38:56.835 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
+2025-06-10 00:38:56.835 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@65a91a3b]
+2025-06-10 00:38:56.836 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing DELETE /zkauth/users/Mike
+2025-06-10 00:38:56.836 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.836 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.837 DEBUG 20863 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [DELETE /zkauth/users/Mike] with attributes [authenticated]
+2025-06-10 00:38:56.838 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured DELETE /zkauth/users/Mike
+2025-06-10 00:38:56.839 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
 
 MockHttpServletRequest:
       HTTP Method = DELETE
       Request URI = /zkauth/users/Mike
-       Parameters = {_csrf=[2b6a1b48-a81f-4ca3-b231-64b828a4c939]}
+       Parameters = {_csrf=[94d6710d-8c31-46c6-8c9d-015cf44f9d72]}
           Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token"]
              Body = null
     Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
@@ -516,19 +516,19 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2025-06-10 00:28:21.509 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
-2025-06-10 00:28:21.509 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@4ceabd7]
-2025-06-10 00:28:21.510 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /zkauth/users
-2025-06-10 00:28:21.510 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.511 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.512 DEBUG 19858 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /zkauth/users] with attributes [permitAll]
-2025-06-10 00:28:21.512 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /zkauth/users
-2025-06-10 00:28:21.515 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-10 00:38:56.847 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
+2025-06-10 00:38:56.848 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@6dbc4835]
+2025-06-10 00:38:56.848 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /zkauth/users
+2025-06-10 00:38:56.849 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.849 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.850 DEBUG 20863 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [POST /zkauth/users] with attributes [permitAll]
+2025-06-10 00:38:56.850 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /zkauth/users
+2025-06-10 00:38:56.853 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
 
 MockHttpServletRequest:
       HTTP Method = POST
       Request URI = /zkauth/users
-       Parameters = {_csrf=[4e85fb58-7ebf-47a8-8a2e-6b6bfdbf4e41]}
+       Parameters = {_csrf=[85684205-c3c8-4393-81c4-89f694191d0c]}
           Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token", Content-Length:"629"]
              Body = {
   "createdBy" : null,
@@ -567,19 +567,19 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2025-06-10 00:28:21.524 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
-2025-06-10 00:28:21.524 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@1c5dd646]
-2025-06-10 00:28:21.525 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /zkauth/users/Mike
-2025-06-10 00:28:21.525 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.525 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.526 DEBUG 19858 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /zkauth/users/Mike] with attributes [authenticated]
-2025-06-10 00:28:21.526 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured GET /zkauth/users/Mike
-2025-06-10 00:28:21.529 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-10 00:38:56.862 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
+2025-06-10 00:38:56.862 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@2a01ca55]
+2025-06-10 00:38:56.863 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /zkauth/users/Mike
+2025-06-10 00:38:56.863 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.863 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.864 DEBUG 20863 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /zkauth/users/Mike] with attributes [authenticated]
+2025-06-10 00:38:56.864 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured GET /zkauth/users/Mike
+2025-06-10 00:38:56.867 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
 
 MockHttpServletRequest:
       HTTP Method = GET
       Request URI = /zkauth/users/Mike
-       Parameters = {_csrf=[a860246b-df18-45d9-9e36-99e4cf53f2e6]}
+       Parameters = {_csrf=[6a66cd99-297f-49a0-894d-bf5a9c6a4bdb]}
           Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token"]
              Body = null
     Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
@@ -612,19 +612,19 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2025-06-10 00:28:21.537 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
-2025-06-10 00:28:21.537 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@75950c90]
-2025-06-10 00:28:21.538 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing DELETE /zkauth/users/Mike
-2025-06-10 00:28:21.538 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.538 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.539 DEBUG 19858 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [DELETE /zkauth/users/Mike] with attributes [authenticated]
-2025-06-10 00:28:21.539 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured DELETE /zkauth/users/Mike
-2025-06-10 00:28:21.542 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-10 00:38:56.876 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
+2025-06-10 00:38:56.876 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@7ac03405]
+2025-06-10 00:38:56.876 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing DELETE /zkauth/users/Mike
+2025-06-10 00:38:56.877 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.877 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.878 DEBUG 20863 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [DELETE /zkauth/users/Mike] with attributes [authenticated]
+2025-06-10 00:38:56.878 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured DELETE /zkauth/users/Mike
+2025-06-10 00:38:56.880 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
 
 MockHttpServletRequest:
       HTTP Method = DELETE
       Request URI = /zkauth/users/Mike
-       Parameters = {_csrf=[a7cef1ed-434c-4dc6-9daa-6574cc30dcbd]}
+       Parameters = {_csrf=[f5c9580d-dd80-4c9c-ba1f-bb12b5683eb1]}
           Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token"]
              Body = null
     Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
@@ -657,19 +657,19 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2025-06-10 00:28:21.549 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
-2025-06-10 00:28:21.550 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@7ac03405]
-2025-06-10 00:28:21.550 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /zkauth/users/Mike
-2025-06-10 00:28:21.550 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.551 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.552 DEBUG 19858 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /zkauth/users/Mike] with attributes [authenticated]
-2025-06-10 00:28:21.552 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured GET /zkauth/users/Mike
-2025-06-10 00:28:21.554 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-10 00:38:56.888 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
+2025-06-10 00:38:56.888 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@349d60f3]
+2025-06-10 00:38:56.888 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing GET /zkauth/users/Mike
+2025-06-10 00:38:56.889 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.889 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.890 DEBUG 20863 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [GET /zkauth/users/Mike] with attributes [authenticated]
+2025-06-10 00:38:56.890 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured GET /zkauth/users/Mike
+2025-06-10 00:38:56.892 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
 
 MockHttpServletRequest:
       HTTP Method = GET
       Request URI = /zkauth/users/Mike
-       Parameters = {_csrf=[235bdc81-914e-4cb2-ad4f-9ee76abce34e]}
+       Parameters = {_csrf=[57a1debd-0e5b-4627-8794-b02a956679a8]}
           Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token"]
              Body = null
     Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
@@ -702,19 +702,19 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2025-06-10 00:28:21.563 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
-2025-06-10 00:28:21.563 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@a1d0386]
-2025-06-10 00:28:21.563 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing DELETE /zkauth/users/Mike
-2025-06-10 00:28:21.564 DEBUG 19858 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.564 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
-2025-06-10 00:28:21.565 DEBUG 19858 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [DELETE /zkauth/users/Mike] with attributes [authenticated]
-2025-06-10 00:28:21.565 DEBUG 19858 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured DELETE /zkauth/users/Mike
-2025-06-10 00:28:21.568 DEBUG 19858 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-10 00:38:56.899 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Created HttpSession as SecurityContext is non-default
+2025-06-10 00:38:56.899 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]] to HttpSession [org.springframework.mock.web.MockHttpSession@37e14077]
+2025-06-10 00:38:56.900 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Securing DELETE /zkauth/users/Mike
+2025-06-10 00:38:56.900 DEBUG 20863 --- [    Test worker] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.900 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]
+2025-06-10 00:38:56.902 DEBUG 20863 --- [    Test worker] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorized filter invocation [DELETE /zkauth/users/Mike] with attributes [authenticated]
+2025-06-10 00:38:56.902 DEBUG 20863 --- [    Test worker] o.s.security.web.FilterChainProxy        : Secured DELETE /zkauth/users/Mike
+2025-06-10 00:38:56.905 DEBUG 20863 --- [    Test worker] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
 
 MockHttpServletRequest:
       HTTP Method = DELETE
       Request URI = /zkauth/users/Mike
-       Parameters = {_csrf=[ca975d08-40ce-4ccc-a6a4-b24d1baa83f1]}
+       Parameters = {_csrf=[3edf1689-f782-4eb5-ac3e-c489050f6aa5]}
           Headers = [Content-Type:"application/json;charset=UTF-8", ZKAuth-Token:"some-test-token"]
              Body = null
     Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
