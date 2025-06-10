@@ -35426,17 +35426,7 @@ $(function(){
 		var title = $(this).closest('article').children('h2').text();
 		titleField.val(title);
 		//prevTitle = title; 
-		/*
-		// Delete entry from list
-		var entries = entriesList();
-		delete entries[article.attr('rel')];
-		article.fadeOut('fast', function() {
-			$(this).remove();
 
-			// Save entries
-			saveEntries(entries);
-		});
-		*/
 		executeCommand("DELETE");
 		// Show entries list
 		showList();
@@ -35517,65 +35507,6 @@ $(function(){
 		contentField.val('').removeClass('error');
 	}
 
-	/*function submitForm(event) {
-		event.preventDefault();
-
-		var type = $(this).attr('rel');
-
-		// Validate input
-		var error = false;
-		titleField.removeClass('error');
-		contentField.removeClass('error');
-
-		// Mark invalid fields
-		if (titleField.val().length == 0) {
-			titleField.addClass('error');
-			error = true;
-		}
-		if (contentField.val().length == 0) {
-			contentField.addClass('error');
-			error = true;
-		}
-
-		// Show alert and abort if an form values are not valid
-		if (error) {
-			alert('All fields are mandatory');
-			return;
-		}
-
-		// Create new JSON entry
-		var json_entry = {'title': titleField.val(),
-							'content': contentField.val()};
-
-		var entries = entriesList();
-		
-		// If we are editing, remvoe old element
-		if (type != 'new') {
-			delete entries[type];
-			$('article[rel='+type+']').remove();
-		}
-
-		// Use timestamp as key
-		var key = Math.round(new Date().getTime() / 1000);
-
-		// Refresh entries
-		var entry_html = htmlForEntry(key, json_entry);
-		container.prepend(entry_html);
-		
-		// Save entry
-		//entries[key] = json_entry;
-		//saveEntries(entries);
-	
-		// Reassign events
-		assignEventsToEntries();
-
-		// Show entries list
-		//showList();
-
-		// Reset form
-		//resetForm();
-	}*/
-
 	function storageChanged(e) {
 		loadEntries();
 	}
@@ -35583,10 +35514,6 @@ $(function(){
 	function entriesChanged() {
 		// Show message if there are no entries
 		noEntries.remove();
-    	/*if (container.html().length == 0) {
-    		container.after('<p id="noEntries">No more entries</p>');
-    		noEntries = $('#noEntries');
-    	}*/
 	}
 
 	function assignEvents() {
@@ -35857,7 +35784,7 @@ $(function(){
 				
 		        gen = bigInt(g,16);
 		        mod = bigInt(N,16);
-		        hash = crypto.createHash('sha256');
+		        // hash = crypto.createHash('sha256');
 		        temp = gen.modPow(cache.password, mod);
 	            registerpass = dec2hex(temp.toString());
 		        
@@ -35919,7 +35846,7 @@ $(function(){
 	      	        challenge = bigInt(response["challenge"], 10);
 	      	    	mod = bigInt(N,16);
 	      	    	answer = challenge.modPow(cache.password, mod);
-	      	    	solution = answer.toString(); 
+	      	    	solution = answer.toString();
 	      	    	options.headers["ZKAuth-Token"] = solution;
 	      	    	console.log("token " + answer.toString())
 	      	    	var ret = http.request(options, function(r2){
@@ -36025,6 +35952,5 @@ $(function(){
 	    }
 	    return hex.join('')
 	}
-
 });
 },{"big-integer":240,"crypto":64,"http":215}]},{},[241]);
