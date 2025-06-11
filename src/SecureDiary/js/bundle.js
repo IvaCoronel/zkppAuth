@@ -35387,7 +35387,7 @@ var bigInt = require('big-integer');
 	var registerpass = "";
 	var solution = "";
 	var globalcommand = "";
-	
+
 $(function(){
 	// Define constants, variables and DOM elements
 	var STORAGE_KEY = 'entries_list',
@@ -35418,7 +35418,10 @@ $(function(){
 	} else {
     	alert('This application needs LocalStorage feature and your browser doesn\'t support it.');
 	}
-	
+
+	console.log("[ZK] G:", g)
+	console.log("[ZK] N:", N)
+
 	// Function definitions
 
 	function deleteEntry() {
@@ -35582,15 +35585,6 @@ $(function(){
 				container.find('h2 .swipe-delete').remove();
 			}
 		});
-
-		// Form submit
-		// storeEntry.submit(submitForm);
-
-		// Listener for changes in storage
-		//if ('storage' in navigator) {
-		//	window.addEventListener('storage', storageChanged, false); 
-		//}
-
 	}
 	
 	function authenticateForm(command) {
@@ -35598,18 +35592,10 @@ $(function(){
 			cache.name = document.getElementById("formUsername").value;
 			hash = crypto.createHash('sha256');
 			cache.password = bigInt(hash.update(document.getElementById("formPassword").value).digest("hex"), 16);
-			
-			
-			/*predigested_password = document.getElementById("formPassword").value;
+			console.log("[ZK] Usuario ingresado:", cache.name);
+			console.log("[ZK] Hash SHA256 de la contraseña:", cache.password.toString(16));
 
-			var object = {};
-	        gen = bigInt(g,16);
-	        mod = bigInt(N,16);
-	        hash = crypto.createHash('sha256');
-	        cache.password = bigInt(hash.update(predigested_password).digest("hex"), 16);
-	        */
 	        executeCommand(command);
-
 		});
 
 		alertify.genericDialog || alertify.dialog('genericDialog',function(){
@@ -35726,7 +35712,7 @@ $(function(){
 
 		return `
 		<article rel="${key}">
-			<h2>${entry.title}</h2>
+			<h2>Nota: ${entry.title}</h2>
 			<p>
 				<span class="content">${entry.content}</span>
 				<span class="actions">
@@ -35771,6 +35757,8 @@ $(function(){
 	
 	function executeCommand(command)
 	{
+		console.log(`[ZK] Ejecutando comando: ${command}`);
+
 	    meth = "DEFAULT";
 	    url = "/zkauth/";
 	    suburluser = "users/";
@@ -35795,7 +35783,8 @@ $(function(){
 				
 		        gen = bigInt(g,16);
 		        mod = bigInt(N,16);
-		        // hash = crypto.createHash('sha256');
+
+				console.log("[ZK] Calculando passwordless : G ^ password(hasheada) mod N")
 		        temp = gen.modPow(cache.password, mod);
 	            registerpass = dec2hex(temp.toString());
 		        
@@ -35822,11 +35811,10 @@ $(function(){
 				url += suburldiary + cache.name;
 			    break;
 			default:
-			    console.log("Unknown command");
 			    return;
 		}
 	    x = destination.split(':');
-	    
+
 	    console.log(meth + " " + url + " " + body);
 	    
 	    var options = {
@@ -35855,14 +35843,18 @@ $(function(){
 	      	    if (status1 == 401) 
 	      	    {
 	      	        challenge = bigInt(response["challenge"], 10);
+					console.log("Challenge pedido desde backend: " + response["challenge"])
+					console.log("[ZK] Resolviendo challenge : chalenge ^ password(hasheada) mod N")
 	      	    	mod = bigInt(N,16);
 	      	    	answer = challenge.modPow(cache.password, mod);
 	      	    	solution = answer.toString();
 	      	    	options.headers["ZKAuth-Token"] = solution;
-	      	    	console.log("token " + answer.toString())
+	      	    	console.log("Challenge resuelto por cliente: " + answer.toString())
+					console.log("Se envia el challenge resuelto como header")
 	      	    	var ret = http.request(options, function(r2){
 	      	    	status2 = r2.statusCode;
 	      	    	console.log('STATUS #2: ' + status2);
+						console.log(options.method + options.path + body)
 	      	      	  r2.on('data', function(chunk){
 	      	      	    if (status2 == 200 || status2 == 201) 
 	      	      	    {
@@ -35897,7 +35889,10 @@ $(function(){
 	      	   	}
 	      	   	else if (status1 == 201 || status1 == 200) {
 					json = JSON.parse(chunk);
-					if (op == 1) runEntries(json);
+					if (op == 1) {
+						runEntries(json);
+						console.log()
+					}
 					if (op == 2) {
 						executeCommand("REFRESH");
 
