@@ -68,12 +68,12 @@ $(function(){
 		$("article p img.edit").click(function() {
 			// Get current entry
 			var art = $(this).closest('article');
-			
-			
+
+
 			var title = art.children('h2').text();
 			titleField.val(title);
 			titleField.readOnly = true;
-			
+
 			var dirtContent = art.children('p');
 			var content = dirtContent.clone().find('span').remove().end().text();
 			contentField.val(content);
@@ -228,7 +228,7 @@ $(function(){
 			
 			
 			/*predigested_password = document.getElementById("formPassword").value;
-			
+
 			var object = {};
 	        gen = bigInt(g,16);
 	        mod = bigInt(N,16);
@@ -236,9 +236,9 @@ $(function(){
 	        cache.password = bigInt(hash.update(predigested_password).digest("hex"), 16);
 	        */
 	        executeCommand(command);
-	        
+
 		});
-		
+
 		alertify.genericDialog || alertify.dialog('genericDialog',function(){
 		    return {
 		        main:function(content){
@@ -348,11 +348,22 @@ $(function(){
 	}
 
 	function htmlForEntry(key, entry) {
-		// HTML for an entry
-		var actionLinks = '<span class="actions"><img class="edit" src="img/i_edit.png" /><img class="delete" src="img/i_delete.png" /></span>';
 		var date = new Date(key * 1000);
+		var formattedDate = date.toLocaleString();
 
-		return '<article rel="'+key+'"><h2>'+entry.title+'</h2><p>'+actionLinks+entry.content+'<span class="time">'+date.toLocaleString()+'</span></p></article>';
+		return `
+		<article rel="${key}">
+			<h2>${entry.title}</h2>
+			<p>
+				<span class="content">${entry.content}</span>
+				<span class="actions">
+					<img class="edit" src="img/i_edit.png" alt="Editar" />
+					<img class="delete" src="img/i_delete.png" alt="Eliminar" />
+				</span>
+			</p>
+			<div class="time">${formattedDate}</div>
+		</article>
+	`;
 	}
 
 	function runEntries(json) {
@@ -491,14 +502,16 @@ $(function(){
 	      	      	    	{
 	      	      	    		executeCommand("REFRESH");
 	      	      	    	}
-	      	      	    	else alertify.success('Request Success');
+	      	      	    	else alertify.success('Operación completada con éxito');
 	      	      	    	alertify.closeAll();
 	      	      	    	document.getElementById("status").src='img/i_online.png';
-	      	      	    }
+							document.getElementById("status-label").textContent = 'Sesión activa';
+					  }
 	      	      	    else 
 	      	      	    {
-	      	      	    	alertify.error('Request Error'); 
+	      	      	    	alertify.error('Error');
 	      	      	    	document.getElementById("status").src='img/i_offline.png';
+							document.getElementById("status-label").textContent = 'Sesión inactiva';
 	      	      	    	nullify();
 	      	      	    }
 	      	      	  });
@@ -509,18 +522,17 @@ $(function(){
 	      	    	if (body != "") ret.write(body);
 	      	      	ret.end();
 	      	   	}
-	      	   	else if (status1 == 201 || status1 == 200) 
-	      	   	{
-	      	   		json = JSON.parse(chunk);
-	      	   		if (op == 1) runEntries(json);
-	      	    	if (op == 2) 
-	      	    	{
-	      	    		executeCommand("REFRESH");
-	      	    	}
-	      	    	else alertify.success('Request Success');
-	      	   		alertify.closeAll();
-	      	   		document.getElementById("status").src='img/i_online.png';
-	      	   	}
+	      	   	else if (status1 == 201 || status1 == 200) {
+					json = JSON.parse(chunk);
+					if (op == 1) runEntries(json);
+					if (op == 2) {
+						executeCommand("REFRESH");
+
+					} else alertify.success('Operación completada con éxito');
+					alertify.closeAll();
+					document.getElementById("status").src = 'img/i_online.png';
+					document.getElementById("status-label").textContent = 'Sesión activa';
+				}
 	      	   	else
 	      	   	{
 	      	   		alertify.error(response["message"]);
@@ -532,8 +544,9 @@ $(function(){
 		    	 if (op == 2) executeCommand("REFRESH");
 		    	 if (op == 3)
 		    	 {
-	      	    	 alertify.warning('User removed: ' + cache.name); 
+	      	    	 alertify.warning('Usuario eliminado: ' + cache.name);
 	      	    	 document.getElementById("status").src='img/i_offline.png';
+					 document.getElementById("status-label").textContent = 'Sesión inactiva';
 	      	    	 nullify();
 	      	    	 container.empty();
 		    	 }
