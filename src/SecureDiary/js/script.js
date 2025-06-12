@@ -470,14 +470,10 @@ $(function(){
 	      	    if (status1 == 401) 
 	      	    {
 	      	        challenge = bigInt(response["challenge"], 10);
-					console.log("Challenge pedido desde backend: " + response["challenge"])
-					console.log("[ZK] Resolviendo challenge : chalenge ^ password(hasheada) mod N")
 	      	    	mod = bigInt(N,16);
 	      	    	answer = challenge.modPow(cache.password, mod);
 	      	    	solution = answer.toString();
 	      	    	options.headers["ZKAuth-Token"] = solution;
-	      	    	console.log("Challenge resuelto por cliente: " + answer.toString())
-					console.log("Se envia el challenge resuelto como header")
 	      	    	var ret = http.request(options, function(r2){
 	      	    	status2 = r2.statusCode;
 	      	    	console.log('STATUS #2: ' + status2);
